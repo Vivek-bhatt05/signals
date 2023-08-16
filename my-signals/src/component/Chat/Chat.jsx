@@ -47,10 +47,10 @@ const Chat = () => {
         })
 
         return () => {
-            socket.emit('disconnect');
+            socket.emit('disconnection');
             socket.off();
         }
-    }, [messages])
+    }, [])
 
     useEffect(() => {
         socket.on('sendMessage', (data) => {
@@ -67,10 +67,10 @@ const Chat = () => {
             <div className="chatContainer">
                 <div className="header">
                     <h2>C CHAT</h2>
-                    <a href="/">X</a>
+                    <a href="/"><h3>x</h3></a>
                 </div>
                 <ReactScrollToBottom className="chatBox">
-                    {messages.map((item, i) => <Message user={item.id === id ? '' : item.user} message={item.message} classs={item.id === id ? 'right' : 'left'} />)}
+                    {messages.map((item, i) => <Message key={i} user={item.id === id ? '' : item.user} message={item.message} classs={item.id === id ? 'right' : 'left'} />)}
                 </ReactScrollToBottom>
                 <div className="inputBox">
                     <input onKeyPress={(event) => event.key === 'Enter' ? send() : null} type="text" id="chatInput" />

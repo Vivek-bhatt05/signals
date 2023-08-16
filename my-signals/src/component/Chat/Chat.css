@@ -27,20 +27,25 @@
     margin: 2.5vmax;
 }
 
-.header img{
-    
+.header a{
+    text-decoration: none;
+    color: white;
+}
+
+.header h3{
+    text-decoration: none;
     margin: 2.5vmax;
     transition: all 0.3s;
     cursor: pointer;
 }
-.header>img:hover{
+.header>h3:hover{
     transform: scale(1.2);
 }
 
 
 .chatBox{
 
- height: 70%;
+ height: 80%;
  box-sizing: border-box;
  
 }
